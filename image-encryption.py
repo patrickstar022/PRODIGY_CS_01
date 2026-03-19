@@ -44,4 +44,4 @@ def main()->None:
     print(f"{args.mode}ed file written to: {output_path}")
 
 if __name__=="__main__":
-    main()
+    main() 
