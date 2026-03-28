@@ -1,35 +1,22 @@
-def encrypt(text):
+def endcrypt(text:str,shift:int):
     encrypted_text=""
-    for i in range(len(text)):
-        char=text[i]
-        if char.isupper():
-            encrypted_text+=chr((ord(char)+4-65)%26+65)
-        elif char.islower():
-            encrypted_text+=chr((ord(char)+4-97)%26+97)
+    for letter in text:
+        if letter.isalpha():
+            base=ord('A') if letter.isupper() else ord('a')
+            encrypted_text+=chr((ord(letter)+shift-base)%26+base)
         else:
-            encrypted_text+=char
+            encrypted_text+=letter
 
-    print(encrypted_text)
-    return
-
-def decrypt(text):
-    decrypted_text=""
-    for i in range(len(text)):
-        char=text[i]
-        if char.isupper():
-            decrypted_text+=chr((ord(char)-4-65)%26+65)
-        elif char.islower():
-            decrypted_text+=chr((ord(char)-4-97)%26+97)
-        else:
-            decrypted_text+=char
-    print(decrypted_text)
-    return
+    return encrypted_text
 
 text=input("Enter the text:")
 print("1.Encrypt" \
         "\n2.Decrypt")
-choice=int(input("Choice:"))
+choice=int(input("choice:"))
+shift=int(input("Enter the shift value:"))
 if choice==1:
-    encrypt(text)
+    encryptedText=endcrypt(text,shift)
+    print(f"The encrypted text is: {encryptedText}")
 elif choice==2:
-    decrypt(text)
+    decryptedText=endcrypt(text,-shift)
+    print(f"The decrypted text is: {decryptedText}")
