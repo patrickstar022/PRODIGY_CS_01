@@ -1,6 +1,6 @@
 # Caesar Cipher Implementation
 
-## PRODIGY_CS_01 (Cybersecurity)
+## PRODIGY_CS_01
 
 A simple Python implementation of the Caesar Cipher encryption technique for text encryption and decryption.
 
